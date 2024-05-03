@@ -2,6 +2,7 @@
 
 import 'package:flutter/material.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
+import 'package:tradingapp/Componets/bottom_navigation_componet.dart';
 import 'package:tradingapp/Screens/homepage.dart';
 
 void main() {
@@ -19,7 +20,7 @@ class MyApp extends StatelessWidget {
         
       child: MaterialApp(
           debugShowCheckedModeBanner: false,
-          home: HomePage(),
+          home: BottomNavigationScreen(),
       ),
     );
   }
