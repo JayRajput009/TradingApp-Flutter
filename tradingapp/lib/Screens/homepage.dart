@@ -1,11 +1,12 @@
 // ignore_for_file: prefer_const_constructors, prefer_const_literals_to_create_immutables, sized_box_for_whitespace, unnecessary_brace_in_string_interps
 
-
+import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
 import 'package:google_fonts/google_fonts.dart';
 import 'package:tradingapp/Componets/griddata.dart';
 import 'package:tradingapp/Componets/wishlist_componet.dart';
+import 'package:tradingapp/Componets/your_holding_componet.dart';
 
 import '../Componets/popular_stocks_componet.dart';
 
@@ -118,13 +119,6 @@ class HomePage extends StatelessWidget {
                   ],
                 ),
               ),
-              //   Padding(
-              //     padding: EdgeInsets.symmetric(horizontal: 16.w, vertical: 1.h),
-              //     child: Divider(
-              //       color: Colors.white10,
-              //       thickness: 2,
-              //     ),
-              //   ),
               Padding(
                 padding: EdgeInsets.symmetric(horizontal: 16.w, vertical: 15.h),
                 child: Row(
@@ -156,183 +150,48 @@ class HomePage extends StatelessWidget {
                   ],
                 ),
               ),
-
               Padding(
-                padding: EdgeInsets.symmetric(horizontal: 16.w),
-                child: Column(
-                  crossAxisAlignment: CrossAxisAlignment.start,
-                  children: [
-                    GridView.builder(
-                      itemCount: griddata.gridmap.length,
-                      shrinkWrap: true,
-                      physics: NeverScrollableScrollPhysics(),
-                      padding: EdgeInsets.zero,
-                      gridDelegate: SliverGridDelegateWithFixedCrossAxisCount(
-                          crossAxisCount: 2,
-                          mainAxisSpacing: 15,
-                          crossAxisSpacing: 14,
-                          mainAxisExtent: 180),
-                      itemBuilder: (_,index ) => Container(
-                        decoration: BoxDecoration(
-                          border: Border.all(
-                            color: Color.fromARGB(255, 59, 59, 59),
-                          ),
-                          borderRadius: BorderRadius.circular(5),
-                        ),
-                        child: Padding(
-                          padding: const EdgeInsets.all(10.0),
-                          child: Column(
-                            children: [
-                              Row(
-                                mainAxisAlignment:
-                                    MainAxisAlignment.spaceBetween,
-                                children: [
-                                  Column(
-                                    crossAxisAlignment:
-                                        CrossAxisAlignment.start,
-                                    children: [
-                                      Text(
-                                        "${griddata.gridmap.elementAt(index)['product_name']}",
-                                        style: TextStyle(
-                                            color: Colors.white,
-                                            fontFamily: GoogleFonts.poppins()
-                                                .fontFamily,
-                                            fontSize: 16.sp),
-                                      ),
-                                      Text(
-                                        'Adobe INC.',
-                                        style: TextStyle(
-                                            color: Colors.white30,
-                                            fontFamily: GoogleFonts.poppins()
-                                                .fontFamily,
-                                            fontSize: 13.sp),
-                                      ),
-                                      Text(
-                                        '(6 Sharing)',
-                                        style: TextStyle(
-                                            color: Colors.white30,
-                                            fontFamily: GoogleFonts.poppins()
-                                                .fontFamily,
-                                            fontSize: 13.sp),
-                                      )
-                                    ],
-                                  ),
-                                  Image.asset("${griddata.gridmap.elementAt(index)['image']}")
-                                ],
-                              ),
-                              SizedBox(
-                                height: 7.h,
-                              ),
-                              Row(
-                                mainAxisAlignment:
-                                    MainAxisAlignment.spaceBetween,
-                                children: [
-                                  Column(
-                                    children: [
-                                      Text(
-                                        'Current',
-                                        style: TextStyle(
-                                            color: Colors.white30,
-                                            fontFamily: GoogleFonts.poppins()
-                                                .fontFamily,
-                                            fontSize: 14.sp),
-                                      ),
-                                      Row(
-                                        children: [
-                                          Icon(
-                                            Icons.currency_rupee,
-                                            size: 20,
-                                            color: Colors.white,
-                                          ),
-                                          Text(
-                                             "${griddata.gridmap.elementAt(index)['current']}",
-                                            style: TextStyle(
-                                                color: Colors.white,
-                                                fontFamily:
-                                                    GoogleFonts.poppins()
-                                                        .fontFamily,
-                                                fontSize: 17.sp),
-                                          ),
-                                        ],
-                                      ),
-                                    ],
-                                  ),
-                                  Column(
-                                    children: [
-                                      Text(
-                                        'Total Return',
-                                        style: TextStyle(
-                                            color: Colors.white30,
-                                            fontFamily: GoogleFonts.poppins()
-                                                .fontFamily,
-                                            fontSize: 14.sp),
-                                      ),
-                                      Text(
-                                         "${griddata.gridmap.elementAt(index)['total_return']}",
-                                        style: TextStyle(
-                                            color: Color(0xff1FB18B),
-                                            fontFamily: GoogleFonts.poppins()
-                                                .fontFamily,
-                                            fontSize: 16.sp),
-                                      )
-                                    ],
-                                  )
-                                ],
-                              ),
-                              Row(
-                                mainAxisAlignment:
-                                    MainAxisAlignment.spaceBetween,
-                                children: [
-                                  Column(
-                                    children: [
-                                      Text(
-                                        'Invested',
-                                        style: TextStyle(
-                                            color: Colors.white30,
-                                            fontFamily: GoogleFonts.poppins()
-                                                .fontFamily,
-                                            fontSize: 14.sp),
-                                      ),
-                                      Row(
-                                        children: [
-                                          Icon(
-                                            Icons.currency_rupee,
-                                            size: 20,
-                                            color: Colors.white,
-                                          ),
-                                          Text(
-                                            "${griddata.gridmap.elementAt(index)['invested']}",
-                                            style: TextStyle(
-                                                color: Colors.white,
-                                                fontFamily:
-                                                    GoogleFonts.poppins()
-                                                        .fontFamily,
-                                                fontSize: 17.sp),
-                                          ),
-                                        ],
-                                      ),
-                                    ],
-                                  ),
-                                  Image.asset('lib/Images/graph.png')
-                                ],
-                              ),
-                            ],
-                          ),
-                        ),
+                padding: EdgeInsets.only(right: 16.w),
+                child: Container(
+                  height: 200.h,
+                  child: ListView(
+                    scrollDirection: Axis.horizontal,
+                    children: [
+                      SizedBox(
+                        width: 16.w,
                       ),
-
-
-
-                      
-                    ),
-                  ],
+                      Holding(
+                        productname: 'Adobe',
+                        subname: 'Adobe INC.',
+                        prdouctimage: 'lib/Images/adobe-a.png',
+                        holdingcount: '(8 Sharing)',
+                        invested: '23.15',
+                        totalreturn: '+23.25',
+                        graphimage: 'lib/Images/graph.png',
+                        percentage: Color(0xff1FB18B),
+                        current: '78.23',
+                      ),
+                      SizedBox(
+                        width: 8.w,
+                      ),
+                      Holding(
+                        productname: 'Spotify',
+                        subname: 'SPTF',
+                        prdouctimage: 'lib/Images/spotify-big.png',
+                        holdingcount: '(4 Sharing)',
+                        invested: '100.15',
+                        totalreturn: '-23.25',
+                        graphimage: 'lib/Images/graphdown.png',
+                        percentage: Color(0xffD85B53),
+                        current: '78.23',
+                      ),
+                    ],
+                  ),
                 ),
               ),
-
               SizedBox(
                 height: 12.h,
               ),
-
               Padding(
                 padding: EdgeInsets.symmetric(
                   horizontal: 16.w,

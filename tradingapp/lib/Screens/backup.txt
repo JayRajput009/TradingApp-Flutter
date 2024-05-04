@@ -1,0 +1,161 @@
+//grid view
+
+ // GridView.builder(
+                    //   itemCount: griddata.gridmap.length,
+                    //   shrinkWrap: true,
+                    //   physics: NeverScrollableScrollPhysics(),
+                    //   padding: EdgeInsets.zero,
+                    //   gridDelegate: SliverGridDelegateWithFixedCrossAxisCount(
+                    //       crossAxisCount: 2,
+                    //       mainAxisSpacing: 15,
+                    //       crossAxisSpacing: 14,
+                    //       mainAxisExtent: 180),
+                    //   itemBuilder: (_,index ) => Container(
+                    //     decoration: BoxDecoration(
+                    //       border: Border.all(
+                    //         color: Color.fromARGB(255, 59, 59, 59),
+                    //       ),
+                    //       borderRadius: BorderRadius.circular(5),
+                    //     ),
+                    //     child: Padding(
+                    //       padding: const EdgeInsets.all(10.0),
+                    //       child: Column(
+                    //         children: [
+                    //           Row(
+                    //             mainAxisAlignment:
+                    //                 MainAxisAlignment.spaceBetween,
+                    //             children: [
+                    //               Column(
+                    //                 crossAxisAlignment:
+                    //                     CrossAxisAlignment.start,
+                    //                 children: [
+                    //                   Text(
+                    //                     "${griddata.gridmap.elementAt(index)['product_name']}",
+                    //                     style: TextStyle(
+                    //                         color: Colors.white,
+                    //                         fontFamily: GoogleFonts.poppins()
+                    //                             .fontFamily,
+                    //                         fontSize: 16.sp),
+                    //                   ),
+                    //                   Text(
+                    //                     'Adobe INC.',
+                    //                     style: TextStyle(
+                    //                         color: Colors.white30,
+                    //                         fontFamily: GoogleFonts.poppins()
+                    //                             .fontFamily,
+                    //                         fontSize: 13.sp),
+                    //                   ),
+                    //                   Text(
+                    //                     '(6 Sharing)',
+                    //                     style: TextStyle(
+                    //                         color: Colors.white30,
+                    //                         fontFamily: GoogleFonts.poppins()
+                    //                             .fontFamily,
+                    //                         fontSize: 13.sp),
+                    //                   )
+                    //                 ],
+                    //               ),
+                    //               Image.asset("${griddata.gridmap.elementAt(index)['image']}")
+                    //             ],
+                    //           ),
+                    //           SizedBox(
+                    //             height: 7.h,
+                    //           ),
+                    //           Row(
+                    //             mainAxisAlignment:
+                    //                 MainAxisAlignment.spaceBetween,
+                    //             children: [
+                    //               Column(
+                    //                 children: [
+                    //                   Text(
+                    //                     'Current',
+                    //                     style: TextStyle(
+                    //                         color: Colors.white30,
+                    //                         fontFamily: GoogleFonts.poppins()
+                    //                             .fontFamily,
+                    //                         fontSize: 14.sp),
+                    //                   ),
+                    //                   Row(
+                    //                     children: [
+                    //                       Icon(
+                    //                         Icons.currency_rupee,
+                    //                         size: 20,
+                    //                         color: Colors.white,
+                    //                       ),
+                    //                       Text(
+                    //                          "${griddata.gridmap.elementAt(index)['current']}",
+                    //                         style: TextStyle(
+                    //                             color: Colors.white,
+                    //                             fontFamily:
+                    //                                 GoogleFonts.poppins()
+                    //                                     .fontFamily,
+                    //                             fontSize: 17.sp),
+                    //                       ),
+                    //                     ],
+                    //                   ),
+                    //                 ],
+                    //               ),
+                    //               Column(
+                    //                 children: [
+                    //                   Text(
+                    //                     'Total Return',
+                    //                     style: TextStyle(
+                    //                         color: Colors.white30,
+                    //                         fontFamily: GoogleFonts.poppins()
+                    //                             .fontFamily,
+                    //                         fontSize: 14.sp),
+                    //                   ),
+                    //                   Text(
+                    //                      "${griddata.gridmap.elementAt(index)['total_return']}",
+                    //                     style: TextStyle(
+                    //                         color: Color(0xff1FB18B),
+                    //                         fontFamily: GoogleFonts.poppins()
+                    //                             .fontFamily,
+                    //                         fontSize: 16.sp),
+                    //                   )
+                    //                 ],
+                    //               )
+                    //             ],
+                    //           ),
+                    //           Row(
+                    //             mainAxisAlignment:
+                    //                 MainAxisAlignment.spaceBetween,
+                    //             children: [
+                    //               Column(
+                    //                 children: [
+                    //                   Text(
+                    //                     'Invested',
+                    //                     style: TextStyle(
+                    //                         color: Colors.white30,
+                    //                         fontFamily: GoogleFonts.poppins()
+                    //                             .fontFamily,
+                    //                         fontSize: 14.sp),
+                    //                   ),
+                    //                   Row(
+                    //                     children: [
+                    //                       Icon(
+                    //                         Icons.currency_rupee,
+                    //                         size: 20,
+                    //                         color: Colors.white,
+                    //                       ),
+                    //                       Text(
+                    //                         "${griddata.gridmap.elementAt(index)['invested']}",
+                    //                         style: TextStyle(
+                    //                             color: Colors.white,
+                    //                             fontFamily:
+                    //                                 GoogleFonts.poppins()
+                    //                                     .fontFamily,
+                    //                             fontSize: 17.sp),
+                    //                       ),
+                    //                     ],
+                    //                   ),
+                    //                 ],
+                    //               ),
+                    //               Image.asset('lib/Images/graph.png')
+                    //             ],
+                    //           ),
+                    //         ],
+                    //       ),
+                    //     ),
+                    //   ),
+

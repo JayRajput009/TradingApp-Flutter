@@ -9,7 +9,9 @@ class griddata{
             "image":"lib/Images/adobe-a.png",
             "current":"53.28",
             "invested":"23.85",
-            "total_return":"+25.78"
+            "total_return":"+25.78",
+            "sharing":"7 Sharing",
+            
             
         },
         {
@@ -18,8 +20,11 @@ class griddata{
             "image":"lib/Images/spotify-big.png",
             "current":"85.03r",
              "invested":"17.85",
-            "total_return":"+72.78"
+            "total_return":"+72.78",
+            "sharing":"5 Sharing"
         },
+
+        
         // {
         //     "product_name": "HDFC Bank",
         //     "sub name":"HDFC",
