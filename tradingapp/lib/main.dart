@@ -2,8 +2,9 @@
 
 import 'package:flutter/material.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
-import 'package:tradingapp/Componets/bottom_navigation_componet.dart';
+import 'package:tradingapp/Screens/explore.dart';
 import 'package:tradingapp/Screens/homepage.dart';
+
 import 'package:tradingapp/Screens/password.dart';
 
 void main() {
@@ -16,13 +17,9 @@ class MyApp extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return ScreenUtilInit(
-        designSize: const Size(430, 932),
-
-        
+      designSize: const Size(430, 932),
       child: MaterialApp(
-          debugShowCheckedModeBanner: false,
-          home:PasswordScreen()
-      ),
+          debugShowCheckedModeBanner: false, home: PasswordScreen()),
     );
   }
 }

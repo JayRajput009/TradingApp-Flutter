@@ -45,7 +45,7 @@ class PopularStocks extends StatelessWidget {
                   child: Image.asset(stockimage),
                 ),
                 SizedBox(
-                  width: 8.w,
+                  width: 0.w,
                 ),
                 Text(
                   stockname,

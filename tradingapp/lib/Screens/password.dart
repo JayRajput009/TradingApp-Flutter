@@ -92,7 +92,7 @@ class _PasswordScreenState extends State<PasswordScreen> {
                             });
 
                             Timer(
-                              Duration(milliseconds: 3000),
+                              Duration(milliseconds: 2700),
                               () => setState(
                                 () {
                                   Navigator.pushReplacement(

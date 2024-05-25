@@ -1,7 +1,10 @@
 
 
+// ignore_for_file: prefer_const_constructors
+
 import 'package:flutter/material.dart';
 import 'package:iconsax/iconsax.dart';
+import 'package:tradingapp/Screens/explore.dart';
 import 'package:tradingapp/Screens/homepage.dart';
 
 class BottomNavigationScreen extends StatefulWidget {
@@ -15,6 +18,9 @@ class _BottomNavigationScreenState extends State<BottomNavigationScreen> {
   int _selectedindex = 0;
   static final List _widgetoption = [
     HomePage(),
+    HomePage(),
+    ExploreScreen(),
+
 
  
   ];

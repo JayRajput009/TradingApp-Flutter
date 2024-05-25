@@ -1,18 +1,30 @@
-// ignore_for_file: prefer_const_constructors, prefer_const_literals_to_create_immutables, sized_box_for_whitespace, unnecessary_brace_in_string_interps
+// ignore_for_file: prefer_const_constructors, prefer_const_literals_to_create_immutables, sized_box_for_whitespace, unnecessary_brace_in_string_interps, avoid_unnecessary_containers
+
+import 'dart:async';
 
 import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
+import 'package:flutter/widgets.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
 import 'package:google_fonts/google_fonts.dart';
+import 'package:iconify_flutter/iconify_flutter.dart';
+import 'package:iconify_flutter/icons/zondicons.dart';
+import 'package:iconsax/iconsax.dart';
 import 'package:tradingapp/Componets/griddata.dart';
 import 'package:tradingapp/Componets/wishlist_componet.dart';
 import 'package:tradingapp/Componets/your_holding_componet.dart';
 
 import '../Componets/popular_stocks_componet.dart';
 
-class HomePage extends StatelessWidget {
+class HomePage extends StatefulWidget {
   const HomePage({super.key});
 
+  @override
+  State<HomePage> createState() => _HomePageState();
+}
+
+class _HomePageState extends State<HomePage> {
+  bool isloadmore = false;
   @override
   Widget build(BuildContext context) {
     return Scaffold(
@@ -359,7 +371,167 @@ class HomePage extends StatelessWidget {
                     ),
                   ),
                 ),
-              )
+              ),
+              SizedBox(
+                height: 13.h,
+              ),
+              Padding(
+                padding: EdgeInsets.symmetric(
+                  horizontal: 16.w,
+                ),
+                child: Row(
+                  mainAxisAlignment: MainAxisAlignment.spaceBetween,
+                  children: [
+                    Text(
+                      'Latest News',
+                      style: TextStyle(
+                          color: Colors.white,
+                          fontFamily: GoogleFonts.poppins().fontFamily,
+                          fontSize: 20.sp),
+                    ),
+                    Row(
+                      children: [
+                        Text(
+                          'See all',
+                          style: TextStyle(
+                              color: Color(0xff1FB18B),
+                              fontFamily: GoogleFonts.poppins().fontFamily,
+                              fontSize: 15.sp),
+                        ),
+                        Icon(
+                          Icons.arrow_forward_ios_rounded,
+                          size: 16.h,
+                          color: Color(0xff1FB18B),
+                        )
+                      ],
+                    ),
+                  ],
+                ),
+              ),
+              SizedBox(
+                height: 13.h,
+              ),
+              Padding(
+                padding: EdgeInsets.symmetric(horizontal: 10.w),
+                child: Container(
+                  decoration: BoxDecoration(
+                      borderRadius: BorderRadius.circular(5.r),
+                      border: Border.all(color: Colors.white12)),
+                  child: Padding(
+                    padding: const EdgeInsets.all(10),
+                    child: Column(
+                      children: [
+                        Row(
+                          mainAxisAlignment: MainAxisAlignment.spaceBetween,
+                          children: [
+                            Expanded(
+                              child: Text(
+                                'Stocks Dip Ahead of FOMC Meeting Minutes Release',
+                                style: TextStyle(
+                                    color: Colors.white, fontSize: 18.sp),
+                              ),
+                            ),
+                            Container(
+                              decoration: BoxDecoration(
+                                  borderRadius: BorderRadius.circular(90.r),
+                                  border: Border.all(color: Colors.white30)),
+                              child: Padding(
+                                padding: const EdgeInsets.all(8.0),
+                                child: Icon(
+                                  Iconsax.link_215,
+                                  size: 20,
+                                  color: Colors.white,
+                                ),
+                              ),
+                            ),
+                          ],
+                        ),
+                        Text(
+                          "Investors are cautious as they await the Federal Open Market Committee's meeting minutes and April's existing home sales data. ​ ",
+                          style: TextStyle(
+                            color: Colors.white30,
+                            fontSize: 15.sp,
+                            fontFamily: GoogleFonts.poppins().fontFamily,
+                          ),
+                        ),
+                        SizedBox(
+                          height: 4.h,
+                        ),
+                        Row(
+                          mainAxisAlignment: MainAxisAlignment.spaceBetween,
+                          children: [
+                            Text(
+                              'Imact for Market',
+                              style: TextStyle(
+                                  color: Colors.white38,
+                                  fontFamily: GoogleFonts.poppins().fontFamily,
+                                  fontSize: 13.sp),
+                            ),
+                            Image.asset(
+                              'lib/Images/spotify-big.png',
+                              scale: 1.5,
+                            ),
+                            Image.asset(
+                              'lib/Images/arrowup.png',
+                            ),
+                            Text(
+                              '1.75%(0.57%)',
+                              style: TextStyle(color: Color(0xff1FB18B)),
+                            ),
+                            Text(
+                              'newsindia.com',
+                              style: TextStyle(color: Colors.white54),
+                            ),
+                          ],
+                        )
+                      ],
+                    ),
+                  ),
+                ),
+              ),
+              SizedBox(
+                height: 20,
+              ),
+              isloadmore
+                  ? Center(
+                      child: CircularProgressIndicator(
+                      color: Color(0xff1FB18B),
+                    ))
+                  : Center(
+                      child: InkWell(
+                        onTap: () {
+                            setState(() {
+                            isloadmore = true;
+                          });
+                          Timer(
+                              Duration(milliseconds: 3500),
+                              () => setState(() {
+                                    isloadmore = false;
+                                  }));
+
+                         
+                        },
+                        child: Container(
+                          decoration: BoxDecoration(
+                            color: Color(0xff1F3932),
+                            borderRadius: BorderRadius.circular(5.r),
+                          ),
+                          child: Padding(
+                            padding: EdgeInsets.symmetric(
+                                horizontal: 10.w, vertical: 5.h),
+                            child: Text(
+                              'Load More..',
+                              style: TextStyle(
+                                color: Color(0xff1FB18B),
+                              ),
+                            ),
+                          ),
+                        ),
+                      ),
+                    ),
+              SizedBox(
+                height: 20,
+              ),
             ],
           ),
         ),
